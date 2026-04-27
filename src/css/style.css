@@ -324,6 +324,9 @@ body {
     border: clamp(5px, 1.5vw, 10px) solid rgba(255, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .portfolio-card:hover {
@@ -358,17 +361,18 @@ body {
 .card-content h3 {
     margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
     font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #8b8ced;
 }
 
 .card-content a {
-    color: #8b8ced;
+    color: inherit;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .card-content a:hover {
-    color: #8b8ced;
+    color: inherit;
 }
 
 .card-content p {
@@ -376,6 +380,12 @@ body {
     font-size: clamp(0.85rem, 2vw, 0.95rem);
     margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
     flex: 1;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(0.3rem, 0.75vw, 0.5rem);
 }
 
 .game-tag {
@@ -386,8 +396,7 @@ body {
     border-radius: 20px;
     font-size: clamp(0.75rem, 1.5vw, 0.85rem);
     font-weight: 600;
-    margin-right: clamp(0.3rem, 0.75vw, 0.5rem);
-    margin-bottom: clamp(0.3rem, 0.75vw, 0.5rem);
+    white-space: nowrap;
 }
 
 .view-all {

@@ -46,56 +46,56 @@ const portfolioCards = [
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/Pong-Thumbnail.png',
         url: 'https://blazing-game.itch.io/pong',
-        tags: ['Strategy']
+        tags: ['2D', 'Arcade', 'Local Multiplayer']
     },
     {
         name: 'Run: Core',
         description: 'Save your 2D Mechanical Kingdom from endless upcoming enemies!',
         thumbnail: 'src/images/thumbnails/RunCore-Thumbnail.png',
         url: 'https://blazing-game.itch.io/run-core',
-        tags: ['2D', 'Top-Down']
+        tags: ['2D', 'Top-Down', 'Shooter', 'Endless Waves']
     },
     {
         name: 'On the Tower',
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/OnTheTower-Thumbnail.png',
         url: 'https://blazing-game.itch.io/on-the-tower',
-        tags: ['Puzzle']
+        tags: ['2D', 'Platformer', 'Adventure', 'Thematic']
     },
     {
         name: 'Octomoto',
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/Octomoto-Thumbnail.png',
         url: 'https://blazing-game.itch.io/octomoto',
-        tags: ['Adventure']
+        tags: ['2D', 'Top-Down', 'Action', 'Endless Waves', 'Boss Battle', 'Power-System']
     },
     {
         name: 'Lost UFO',
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/LostUFO-Thumbnail.png',
         url: 'https://blazing-game.itch.io/lost-ufo',
-        tags: ['Strategy']
+        tags: ['2D', 'Shooter', 'Space', 'Top-Down', 'Multiple Levels', 'Boss Battle', 'Multiple Weapons']
     },
     {
         name: 'Snake Killer',
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/SnakeKiller-Thumbnail.gif',
         url: 'https://blazing-game.itch.io/snake-killer',
-        tags: ['Strategy']
+        tags: ['2D', 'Shooter', 'Solver']
     },
      {
         name: 'Jump Up',
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/JumpUp-Thumbnail.png',
         url: 'https://blazing-game.itch.io/jump-up',
-        tags: ['Strategy']
+        tags: ['2D', 'Platformer', 'Local Multiplayer']
     },
     {
         name: 'Solar Installer',
         description: 'Brief description of your game. What makes it unique and fun to play?',
         thumbnail: 'src/images/thumbnails/SolarInstaller-Thumbnail.png',
         url: 'https://blazing-game.itch.io/solar-installer',
-        tags: ['Strategy']
+        tags: ['2D', 'Simulation', 'Resource Management', ]
     }
 ];
 
@@ -105,27 +105,32 @@ function renderPortfolioCards() {
     portfolioGrid.innerHTML = ''; // Clear existing content
 
     portfolioCards.forEach(card => {
-        // Create card element
-        const cardElement = document.createElement('div');
-        cardElement.className = 'portfolio-card';
+        // Create card link element
+        const cardLink = document.createElement('a');
+        cardLink.className = 'portfolio-card';
+        cardLink.href = card.url;
+        cardLink.target = '_blank';
+        cardLink.rel = 'noopener noreferrer';
         
         // Create tags HTML
         const tagsHTML = card.tags.map(tag => `<span class="game-tag">${tag}</span>`).join('');
         
         // Set card content
-        cardElement.innerHTML = `
+        cardLink.innerHTML = `
             <div class="card-image">
                 <img src="${card.thumbnail}" alt="${card.name}">
             </div>
             <div class="card-content">
-                <h3><a href="${card.url}" target="_blank">${card.name}</a></h3>
+                <h3>${card.name}</h3>
                 <p>${card.description}</p>
-                ${tagsHTML}
+                <div class="tags-container">
+                    ${tagsHTML}
+                </div>
             </div>
         `;
         
         // Append to grid
-        portfolioGrid.appendChild(cardElement);
+        portfolioGrid.appendChild(cardLink);
     });
 
     // Set up intersection observer for newly created cards
