@@ -586,7 +586,7 @@ body {
     }
 
     .intro-image img {
-        max-width: 150px;
+        width: clamp(20vw, 60vw, 70vw);
     }
 
     .intro-text h1 {
@@ -598,13 +598,25 @@ body {
         gap: 0.75rem;
         width: 100%;
     }
+    .intro-text h1 {
+        font-size: clamp(2rem, 10vw, 15rem);
+        margin-bottom: clamp(0.5rem, 2vw, 1rem);
+        line-height: 1.2;
+    }
+
+    .intro-text p {
+        font-size: clamp(1.25rem, 3vw, 3rem);
+        margin-bottom: clamp(0.5rem, 2vw, 2rem);
+        line-height: 1.6;
+    }
 
     .btn {
         width: 100%;
     }
     .btn-hero{
-        width: clamp(8rem, 10vw, 10rem);
-        height: clamp(2.5rem, 5vw, 5rem);
+        width: clamp(8rem, 90vw, 50vw);
+        height: clamp(2.5rem, 5vh, 20vh);
+        font-size: medium;
     }
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -713,27 +725,27 @@ body {
         background-color: #000000;
     }
     .intro-text h1 {
-        font-size: clamp(1rem, 6vw, 2rem);
+        font-size: clamp(2rem, 8vw, 10rem);
         margin-bottom: clamp(0.5rem, 2vw, 1rem);
         line-height: 1.2;
     }
 
     .intro-text p {
-        font-size: clamp(0.5rem, 2.5vw, 1.25rem);
+        font-size: clamp(1.25rem, 3vw, 3rem);
         margin-bottom: clamp(0.5rem, 2vw, 2rem);
         line-height: 1.6;
     }
     .hero-section {
         min-height: 75vh;
     }
-
+    
     .intro-container {
         flex-direction: column;
         gap: 1.5rem;
     }
 
     .intro-image img {
-        max-width: 200px;
+        width: clamp(20vw, 60vw, 70vw);
     }
 
     .intro-buttons {
@@ -744,6 +756,7 @@ body {
     .btn {
         width: 100%;
     }
+
     .btn-hero{
         width: clamp(8rem, 10vw, 10rem);
         height: clamp(2.5rem, 5vw, 5rem);
