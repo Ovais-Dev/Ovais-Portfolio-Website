@@ -176,22 +176,27 @@ body {
 }
 
 .intro-image {
+    position: relative;
     flex: 1;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 0;
+    
 }
 
 .intro-image img {
     width: 100%;
+    aspect-ratio: 1;
     max-width: clamp(250px, 22vw, 400px);
     border-radius: 50%;
     border: clamp(5px, 2vw, 10px) solid rgba(29, 29, 29, 0.5);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
+    
+    z-index: 1;
 }
 
 .intro-text {
@@ -746,6 +751,7 @@ body {
 
     .intro-image img {
         width: clamp(20vw, 60vw, 70vw);
+        aspect-ratio: 1;
     }
 
     .intro-buttons {
