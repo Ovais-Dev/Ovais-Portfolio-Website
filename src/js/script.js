@@ -43,7 +43,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const portfolioCards = [
      {
         name: 'Pong +',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'Ping Pong With Power Ups',
         thumbnail: 'src/images/thumbnails/Pong-Thumbnail.png',
         url: 'https://blazing-game.itch.io/pong',
         tags: ['2D', 'Arcade', 'Local Multiplayer']
@@ -57,45 +57,52 @@ const portfolioCards = [
     },
     {
         name: 'On the Tower',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'Climb up all the way to the top.',
         thumbnail: 'src/images/thumbnails/OnTheTower-Thumbnail.png',
         url: 'https://blazing-game.itch.io/on-the-tower',
         tags: ['2D', 'Platformer', 'Adventure', 'Thematic']
     },
     {
         name: 'Octomoto',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'Boss Rush Game Jam. Rush And Kill',
         thumbnail: 'src/images/thumbnails/Octomoto-Thumbnail.png',
         url: 'https://blazing-game.itch.io/octomoto',
         tags: ['2D', 'Top-Down', 'Action', 'Endless Waves', 'Boss Battle', 'Power-System']
     },
     {
         name: 'Lost UFO',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'UFO!',
         thumbnail: 'src/images/thumbnails/LostUFO-Thumbnail.png',
         url: 'https://blazing-game.itch.io/lost-ufo',
         tags: ['2D', 'Shooter', 'Space', 'Top-Down', 'Multiple Levels', 'Boss Battle', 'Multiple Weapons']
     },
     {
         name: 'Snake Killer',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'An classic snake game with a hunter companion',
         thumbnail: 'src/images/thumbnails/SnakeKiller-Thumbnail.gif',
         url: 'https://blazing-game.itch.io/snake-killer',
         tags: ['2D', 'Shooter', 'Solver']
     },
      {
         name: 'Jump Up',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'Jump and Compete to go climb the platform.',
         thumbnail: 'src/images/thumbnails/JumpUp-Thumbnail.png',
         url: 'https://blazing-game.itch.io/jump-up',
         tags: ['2D', 'Platformer', 'Local Multiplayer']
     },
     {
         name: 'Solar Installer',
-        description: 'Brief description of your game. What makes it unique and fun to play?',
+        description: 'A Project About Solar Renewable Resources',
         thumbnail: 'src/images/thumbnails/SolarInstaller-Thumbnail.png',
         url: 'https://blazing-game.itch.io/solar-installer',
         tags: ['2D', 'Simulation', 'Resource Management', ]
+    },
+    {
+        name: 'Space Shooter',
+        description: 'A VR Space Shooter Game',
+        thumbnail: 'src/images/thumbnails/SpaceShooter.gif',
+        url: '',
+        tags: ['VR', 'Shooter', 'Wave System', ]
     }
 ];
 
