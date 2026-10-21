@@ -101,7 +101,7 @@ const portfolioCards = [
         name: 'Space Shooter',
         description: 'A VR Space Shooter Game',
         thumbnail: 'src/images/thumbnails/SpaceShooter.gif',
-        url: '',
+        url: 'https://drive.google.com/file/d/1n1-HxU4dRDgeTEfR1dehOa0Ow3BrHr5s/view?usp=sharing',
         tags: ['VR', 'Shooter', 'Wave System', ]
     }
 ];
