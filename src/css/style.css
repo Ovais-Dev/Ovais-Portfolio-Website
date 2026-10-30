@@ -426,6 +426,14 @@ body {
 
     opacity: 0;
 }
+
+.theme-container,
+.theme-container * {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .theme-icon.active{
     opacity: 1;
 }
