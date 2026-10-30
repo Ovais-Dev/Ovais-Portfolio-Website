@@ -1,0 +1,13 @@
+Keep improving the portfolio site. don't stop.
+keep it simple and not ai slop.
+take reference from other portfolio sites.
+have full control of the code.
+
+
+
+To do:
+1. Inset shadow in hero header with the theme color for fade like transition between the home and portfolio section.
+2. Make your profile image pop up, like 3d shapes
+3. do same with your text.
+4. add extra materials for your site to pop up, like icons floating, your studio logo etc like playable character.
+5. implement your playable character (owl) like dino run or flappy bird when click your profile logo - also highlig on hover

@@ -1,4 +1,40 @@
 /* General Styles */
+/* declaring variables */
+:root {
+    --bg-color: #ffffff;
+    --navbar-txt-lightmode-color: #000000;
+    --heading-txt-color: #2c3e50;;
+    --text-color: #7f8c8d;
+    --card-color: rgb(255, 255, 255);
+    --card-border-color: rgba(76, 0, 255, 0.2);
+    --card-hover-color: rgba(0, 0, 0, 0.2);
+    --card-name-color: #8b8ced;
+    --card-tag-color: rgb(225, 225, 225);
+    --btn-fill-color: #8B8CED;
+    --btn-fill-txt-color: white;
+    --btn-hollow-color: white;
+    --btn-hollow-hover-txt-color: #8b8ced;
+    --theme-fill-color: rgba(255, 255, 255, 0.5);
+}
+/* intiailizing the sci-fi theme */
+[data-theme = "sci-fi"]{
+    --bg-color: #0b0c10;          /* Deep obsidian/space black */
+    --navbar-txt-lightmode-color: #ffae67;
+    --heading-txt-color: #ffae67;  /* Neon holographic cyan */
+    --text-color: rgb(255, 255, 255);         /* Crisp, metallic silver-grey */
+    /* --card-color: #1f2833;         Dark, metallic star-cruiser hull grey */
+    --card-color: linear-gradient(135deg, #820000b2 0%, #431556 100%);
+    --card-border-color: rgb(255, 209, 118);
+    --card-hover-color: rgba(255, 244, 85, 0.2);
+    --card-name-color: rgb(255, 209, 118);
+    --card-tag-color: rgb(248, 147, 203);
+    --btn-fill-color: rgb(255, 209, 118);
+    --btn-fill-txt-color: black;
+    --btn-hollow-color: white;
+    --btn-hollow-hover-txt-color: black;
+    --theme-fill-color: rgba(0, 0, 0, 0.5);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +49,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #eeefe7;
+    background-color: var(--bg-color);
+    /* background-color: #eeefe7; */
     overflow-x: hidden;
 }
 
@@ -41,7 +78,7 @@ body {
 
 .navbar.light-mode .logo,
 .navbar.light-mode .nav-menu a {
-    color: #000;
+    color: var(--navbar-txt-lightmode-color);
 }
 
 .navbar.light-mode .nav-menu a::after {
@@ -139,25 +176,29 @@ body {
 /* Intro Section */
 .hero-section {
     position: relative;
-    height: clamp(600px, 80vh, 90vh);
+    width: 100%;
+    height: clamp(300px, 80vh, 90vh);
     padding: clamp(1.5rem, 4vw, 3rem) 0;
     padding-top: clamp(5rem, 8vw, 8rem);
-    background: linear-gradient(135deg, #2b0000b2 0%, #282855 100%);
+    background: linear-gradient(135deg, #7d4646 0%, #282855 100%);
     color: #fff;
     margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    box-shadow: inset 0px -30px 10px -10px var(--bg-color);
 }
 
 .intro-container {
     position: relative;
-    width: clamp(280px, 90%, 1200px);
+    width: clamp(280px, 70%, 1200px);
+   
     margin: 0 auto;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: clamp(0.2rem, 1vw, 3rem);
     padding: 0 clamp(0.5rem, 2vw, 2rem);
 }
@@ -260,12 +301,12 @@ body {
     white-space: nowrap;
 }
 .btn-primary {
-    background-color: #8B8CED;
-    color: #fff;
+    background-color: var(--btn-fill-color);
+    color: var(--btn-fill-txt-color);
 }
 .btn-hero{
     width: clamp(2rem, 15vw, 10rem);
-        height: clamp(1rem, 4vw, 3rem);
+    height: clamp(1rem, 4vw, 3rem);
 }
 
 .btn-primary:hover {
@@ -283,7 +324,7 @@ body {
 
 .btn-secondary:hover {
     background-color: #fff;
-    color: #8B8CED;
+    color: var(--btn-hollow-hover-txt-color);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 135, 239, 0.4);
 }
@@ -312,7 +353,94 @@ body {
 
 /* Portfolio Section */
 .portfolio-section {
+    position: relative;
+    background: var(--bg-color);
     padding: clamp(3rem, 6vw, 6rem) clamp(1rem, 2vw, 2rem);
+}
+
+.theme-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 5px;
+    top: 5px;
+    background-color: var(--card-border-color);
+    width: 100px;
+    height: 40px;
+    /* border: clamp(1px, 1vh, 2px) solid rgb(218, 176, 255); */
+    border-radius: 20px;
+    /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.4); */
+
+    padding: 0;
+}
+
+.theme-center{
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start; */
+    width: 95%;
+    height: 90%;
+    background-color:var(--theme-fill-color);
+    margin: 0;
+    padding: 0 5px;
+    border-radius: 20px;
+    box-shadow: inset 0 0px 4px black;
+
+    cursor: pointer;
+}
+
+/* .theme-center.active{
+    justify-content: flex-end;
+} */
+
+.rolling-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    background-color: var(--btn-fill-color);
+
+    transition: transform 0.3s ease-in-out;
+
+}
+.spinner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+}
+.theme-icon{
+    position: absolute;
+
+    width: 70%;
+    aspect-ratio: 1;
+    transition: transform 0.3s ease-in-out, opacity 0.15s ease-out;
+    transform-origin: center;
+
+    opacity: 0;
+}
+.theme-icon.active{
+    opacity: 1;
+}
+.rolling-circle.left{
+    transform: translateX(0px);
+   
+}
+.rolling-circle.right{
+    transform: translateX(57px);
+}
+.rolling-circle.left .theme-icon{
+     transform: rotate(0deg);
+}
+.rolling-circle.right .theme-icon{
+     transform: rotate(360deg);
 }
 
 .portfolio-container {
@@ -324,12 +452,12 @@ body {
     font-size: clamp(1.3rem, 5vw, 2.5rem);
     text-align: center;
     margin-bottom: clamp(0.25rem, 1vw, 0.5rem);
-    color: #2c3e50;
+    color: var(--heading-txt-color);
 }
 
 .portfolio-subtitle {
     text-align: center;
-    color: #7f8c8d;
+    color: var(--text-color);
     font-size: clamp(0.75rem, 2.5vw, 1.1rem);
     margin-bottom: clamp(1.5rem, 4vw, 3rem);
 }
@@ -342,12 +470,13 @@ body {
 }
 
 .portfolio-card {
-    background-color: #ffffff;
+    background: var(--card-color);
+    /* background: linear-gradient(135deg, #820000b2 0%, #431556 100%); */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: clamp(5px, 1.5vw, 10px) solid rgba(255, 255, 255, 0.5);
+    border: clamp(1px, 1vw, 3px) solid var(--card-border-color);
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -357,7 +486,7 @@ body {
 
 .portfolio-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px var(--card-hover-color);
 }
 
 .card-image {
@@ -387,7 +516,7 @@ body {
 .card-content h3 {
     margin-bottom: clamp(0.3rem, 1vw, 0.5rem);
     font-size: clamp(0.85rem, 2.5vw, 1.2rem);
-    color: #8b8ced;
+    color: var(--card-name-color);
 }
 
 .card-content a {
@@ -402,7 +531,7 @@ body {
 }
 
 .card-content p {
-    color: #7f8c8d;
+    color: var(--text-color);
     font-size: clamp(0.65rem, 2vw, 0.95rem);
     margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
     flex: 1;
@@ -416,7 +545,7 @@ body {
 
 .game-tag {
     display: inline-block;
-    background-color: #ecf0f1;
+    background-color: var(--card-tag-color);
     color: #2c3e50;
     padding: clamp(0.2rem, 0.5vw, 0.3rem) clamp(0.5rem, 1.5vw, 0.8rem);
     border-radius: 20px;
@@ -544,7 +673,7 @@ body {
     .nav-menu.active {
         display: flex;
         transform: translateX(0);
-    }
+    } 
 
     .nav-menu li {
         margin: 0.5rem 0;
@@ -616,10 +745,11 @@ body {
     }
 
     .intro-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.75rem;
         width: 100%;
     }
+
     .intro-text h1 {
         font-size: clamp(2rem, 10vw, 15rem);
         margin-bottom: clamp(0.5rem, 2vw, 1rem);
@@ -635,10 +765,11 @@ body {
     .btn {
         width: 100%;
     }
+
     .btn-hero{
-        width: clamp(8rem, 90vw, 50vw);
+        width: clamp(8rem, 12vw, 20vw);
         height: clamp(2.5rem, 5vh, 20vh);
-        font-size: medium;
+        font-size: small;
     }
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -807,6 +938,7 @@ body {
     }
 }
 
+
 /* Tablets (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .hero-backdrop {
@@ -822,7 +954,7 @@ body {
     }
 
     .intro-buttons {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
     }
 
@@ -831,7 +963,9 @@ body {
     }
     .btn-hero{
         width: clamp(8rem, 10vw, 10rem);
-        height: clamp(2.5rem, 5vw, 5rem);
+        height: clamp(2.5rem, 3vw, 5rem);
+        font-size: smaller;
+
     }
     .contact-links {
         flex-wrap: wrap;

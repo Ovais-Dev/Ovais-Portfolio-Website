@@ -1,6 +1,10 @@
 // Hamburger Menu Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
+const themeBtn = document.getElementById('theme');
+const theme_center = document.getElementById('theme-center');
+const rolling_circle = document.querySelector('.rolling-circle');
+const theme_icons = document.querySelectorAll('.theme-icon');
 
 if (hamburger) {
     hamburger.addEventListener('click', () => {
@@ -105,7 +109,26 @@ const portfolioCards = [
         tags: ['VR', 'Shooter', 'Wave System', ]
     }
 ];
+// toggling theme color
+themeBtn.addEventListener('click', ()=>{
 
+    theme_center.classList.toggle("active");
+    rolling_circle.classList.toggle("left");
+    rolling_circle.classList.toggle("right");
+    theme_icons.forEach(element => {
+        element.classList.toggle('active');
+    });
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    let themeName = "light";
+
+    if(currentTheme==="light"){
+        themeName = "sci-fi";
+    }
+    document.documentElement.setAttribute("data-theme",themeName);
+    // optional to save changes in storage
+    localStorage.setItem("data-theme", themeName);
+})
+themeBtn.click();
 // Function to generate portfolio cards
 function renderPortfolioCards() {
     const portfolioGrid = document.getElementById('portfolio-grid');
@@ -205,7 +228,7 @@ function updateNavbarColor() {
         }
     });
     
-    // Toggle light-mode class on navbar
+    // Toggle light-mode class on navbar, it's not a theme but rather when scroll and pass the half section of webpage
     if (isLightSection) {
         navbar.classList.add('light-mode');
     } else {
@@ -221,3 +244,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNavbarColor();
     renderPortfolioCards();
 });
+
