@@ -147,16 +147,18 @@ function renderPortfolioCards() {
         
         // Set card content
         cardLink.innerHTML = `
-            <div class="card-image">
-                <img src="${card.thumbnail}" alt="${card.name}">
-            </div>
-            <div class="card-content">
-                <h3>${card.name}</h3>
-                <p>${card.description}</p>
-                <div class="tags-container">
-                    ${tagsHTML}
+            
+                <div class="card-image">
+                    <img src="${card.thumbnail}" alt="${card.name}">
                 </div>
-            </div>
+                <div class="card-content">
+                    <h3>${card.name}</h3>
+                    <p>${card.description}</p>
+                    <div class="tags-container">
+                        ${tagsHTML}
+                    </div>
+                </div>
+           
         `;
         
         // Append to grid
